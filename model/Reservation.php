@@ -75,13 +75,9 @@ class Reservation{
 		$ctn = new Connection();
 		if(isset($_POST['cancel']))
 		{
-			$str = " UPDATE tickets SET canceledticket = 1 WHERE idTicket = $idTicket";
-			$query = $ctn->prepare($str);
-			$query->execute();
-
-			$str = "UPDATE voyages SET places = (places+1) WHERE id = tickets.idVoyage";
-			$query = $ctn->prepare($str);
-			$query->execute();
+			$str1 = "UPDATE tickets SET canceledticket = 1 WHERE idTicket = $idTicket";
+			$query1 = $ctn->prepare($str1);
+			$query1->execute();
 		}else{
 			echo "nnn";
 		}

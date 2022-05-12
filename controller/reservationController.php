@@ -78,16 +78,12 @@ class ReservationController
 		}
 	}
 
-	public function cancel($idTicket)
+	public function cancel($id)
 	{
 		unset($_SESSION['canceled']);
 		$reservation = new Reservation();
 
-		$reservation->cancel($idTicket);
-		$_SESSION['canceled'] = true;
-		echo "<center class='alert alert-danger' role='alert'><div>
-		<h4>Voyage est Annulé</h4>
-		</div></center>";
+		$reservation->cancel($id);
 		require_once __DIR__."/../view/index.php";
 	}
 

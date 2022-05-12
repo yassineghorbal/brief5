@@ -87,7 +87,7 @@
                                     <p class="card-text"><?= date("D, d M Y H:i", strtotime($ticket['dateDepart'])); ?> <i class="bi bi-arrow-right"></i> <?= date("D, d M Y H:i", strtotime($ticket['dateArrivee'])); ?></p>
                                     
                                         <?php if($ticket['canceledticket'] == 0 && $time > 3600) { ?>
-                                            <form action="http://localhost/trainline/reservation/cancel/<?= $ticket['idTicket'] ?>" method="POST">
+                                            <form action='http://localhost/trainline/reservation/cancel/<?= $ticket['idTicket'] ?>' method="POST">
                                             <button type="submit" name="cancel" class="btn btn-danger">Annuler</button>
                                             </form>
                                         <?php } elseif($ticket['canceledticket'] == 0 && $time < 3600) { ?>
